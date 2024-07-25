@@ -44,6 +44,6 @@ def locate_number(list, target):
 
 if __name__=="__main__":
   for test_case in tests:
-    locate_number(**test)
+    print(locate_number(**test_case["input"]) == test_case["output"])
 
 
