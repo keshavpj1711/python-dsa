@@ -36,14 +36,18 @@ def locate_number(list, target):
     if mid_no == target:
       return mid
     elif mid_no < target:
-      ho = mid-1
-    else:
+      hi = mid-1
+    elif mid_no > target:
       lo = mid+1
 
   return -1
 
 if __name__=="__main__":
   for test_case in tests:
-    print(locate_number(**test_case["input"]) == test_case["output"])
+    result = locate_number(test_case["input"]["cards"], test_case["input"]["query"]) == test_case["output"]
+    if result == True:
+      print("Passed")
+    else:
+      print(f"Failed for: {test_case}")
 
 
