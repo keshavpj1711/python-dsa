@@ -7,7 +7,7 @@
 # - The list is empty
 # - The list contains multiple instances of target
 
-test = [
+tests = [
     {'input': {'cards': [13, 11, 10, 7, 4, 3, 1, 0], 'query': 7}, 'output': 3},
     {'input': {'cards': [13, 11, 10, 7, 4, 3, 1, 0], 'query': 1}, 'output': 6},
     {'input': {'cards': [4, 2, 1, -1], 'query': 4}, 'output': 0},
@@ -21,4 +21,29 @@ test = [
 
 
 def locate_number(list, target):
-  pass
+  # Writing a pseudo code 
+  # Find the middle element
+  # Check if that element is bigger or smaller than target
+  # if smaller, pick the middle element from the left half of the list, considering the list is sorted in descending order
+  # if bigger, pick the middle element from the right half of the list
+  # if no more elements return -1, if element found return it's position
+  lo, hi = 0, len(list) - 1
+
+  while lo <= hi:
+    mid = (lo + hi) // 2 
+    mid_no = list[mid]
+
+    if mid_no == target:
+      return mid
+    elif mid_no < target:
+      ho = mid-1
+    else:
+      lo = mid+1
+
+  return -1
+
+if __name__=="__main__":
+  for test_case in tests:
+    locate_number(**test)
+
+
