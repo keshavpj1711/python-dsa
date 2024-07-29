@@ -18,3 +18,12 @@ i.e. if the complexity of the algorithm is **cN^3 + dN^2 + eN + f**, in the Big 
 ### Binary Search time complexity 
 <img src="./binarySearch/bs_time_complexity.jpeg" width=500/>
 
+## Differences between Linear Search and Binary Search
+
+The actual benefit of BS is visible with very large inputs. 
+Binary search runs `c * N / logN` times faster than linear search, for some fixed constant c . 
+Since log N grows very slowly compared to N, the difference gets larger with the size of the input. 
+
+Here's a graph showing different Big O Notations
+
+<img src="./bigOcheatsheet.png" width=500/>
