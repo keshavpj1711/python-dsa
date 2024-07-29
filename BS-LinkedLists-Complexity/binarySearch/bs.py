@@ -19,6 +19,21 @@ tests = [
     {'input': {'cards': [8, 8, 6, 6, 6, 6, 6, 6, 3, 2, 2, 2, 0, 0, 0], 'query': 6}, 'output': 2}
 ]
 
+def test_location(list, target, mid):
+  # This is basically to find the first occurence of the target
+  mid_no = list[mid]
+  if mid_no == target:
+    if mid-1 > 0 and list[mid-1] == target:
+      return 'left'
+    else:
+      return 'found'
+
+  elif mid_no < target:
+    # basically if target is bigger than mid no you have to go left
+    return 'left'
+  else:
+    # if the mid_no > target, then you have to go right
+    return 'right'
 
 def locate_number(list, target):
   # Writing a pseudo code 
@@ -32,12 +47,13 @@ def locate_number(list, target):
   while lo <= hi:
     mid = (lo + hi) // 2 
     mid_no = list[mid]
+    result = test_location(list, target, mid)
 
-    if mid_no == target:
+    if result == 'found':
       return mid
-    elif mid_no < target:
+    elif result == 'left':
       hi = mid-1
-    elif mid_no > target:
+    elif result == 'right':
       lo = mid+1
 
   return -1
