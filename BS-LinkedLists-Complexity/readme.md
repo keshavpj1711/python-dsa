@@ -52,3 +52,4 @@ def binary_search(lo, hi, condition):
             lo = mid + 1
     return -1
 ```
+>One thing you might see here is that **instead of passing a list** we pass the number **lo and hi**, this to use BS for different types of other problems
