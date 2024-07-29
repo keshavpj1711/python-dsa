@@ -5,7 +5,13 @@
 # - The element is found
 # - The element is not found
 # - The list is empty
-# - The list contains multiple instances of target
+# - The list contains multiple instances of target, and we need to find the first occurence
+
+# Advice
+# - Write small functions which are readable in a single instance
+# - Python provides string as first class instance and thus use them freely
+# - In other languages like C, Java this is not the case with strings.
+# - Try to create as many different test cases 
 
 tests = [
     {'input': {'cards': [13, 11, 10, 7, 4, 3, 1, 0], 'query': 7}, 'output': 3},
