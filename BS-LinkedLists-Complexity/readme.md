@@ -16,5 +16,5 @@ to capture the trend of relationship between the size of the input and the compl
 i.e. if the complexity of the algorithm is **cN^3 + dN^2 + eN + f**, in the Big O notation **it is expressed as O(N^3)**
 
 ### Binary Search time complexity 
-![](./binarySearch/bs_time_complexity.jpeg)
+<img src="./binarySearch/bs_time_complexity.jpeg" width=500/>
 
