@@ -38,5 +38,25 @@ tests = [
   },
 ]
 
+def get_rotations_linear(nums):
+  position = 0
+  
+  while position<len(nums):
+
+    if position > 0 and nums[position] < nums[position-1]:
+      return position
+
+    position += 1
+
+  return 0
+
 def get_rotations(nums):
   pass
+
+if __name__ == "__main__":
+  for test in tests:
+    rotations = get_rotations_linear(test["input"])
+    if rotations == test["output"]:
+      print("Passed")
+    else:
+      print(f"Failed: {test["input"]}, Expected {test["output"]}, Got {rotations} ")
