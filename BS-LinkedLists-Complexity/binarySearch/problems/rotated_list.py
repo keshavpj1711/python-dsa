@@ -13,21 +13,29 @@
 
 tests = [
   {
-    "input": [5, 6, 9, 0, 2, 3, 4],
-    "output": 3 # rotations 
+    "input": [11, 5, 6, 9],
+    "output": 1 # rotations 
   }, 
   {
     "input": [5, 6, 9, 0, 2, 3, 4],
     "output": 3 # rotations 
   }, 
   {
-    "input": [5, 6, 9, 0, 2, 3, 4],
-    "output": 3 # rotations 
+    "input": [12, 23, 28, 40, 5],
+    "output": 4 # rotations 
   }, 
   {
     "input": [5, 6, 9, 0, 2, 3, 4],
     "output": 3 # rotations 
-  }
+  },
+  {
+    "input": [5],
+    "output": 0 # rotations 
+  },
+  {
+    "input": [],
+    "output": 0 # rotations 
+  },
 ]
 
 def get_rotations(nums):
