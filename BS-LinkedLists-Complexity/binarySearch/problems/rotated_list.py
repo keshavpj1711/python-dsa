@@ -66,16 +66,21 @@ def get_rotations_bs(nums):
   while lo <= hi:
     mid = (lo+hi) // 2 
     mid_number = nums[mid]
-    last_number = nums[hi]
 
-    if mid_number < last_number:
+    # print("lo:", lo, ", hi:", hi, ", mid:", mid, ", mid_number:", mid_number, ", last_number", nums[hi])
+
+    if mid > 0 and nums[mid] < nums[mid-1]:
+      return mid
+    elif mid_number < nums[hi]:
       hi = mid-1
     else:
       lo = mid+1
 
+  return 0
+
 if __name__ == "__main__":
   for test in tests:
-    rotations = get_rotations_linear(test["input"])
+    rotations = get_rotations_bs(test["input"])
     if rotations == test["output"]:
       print("Passed")
     else:
