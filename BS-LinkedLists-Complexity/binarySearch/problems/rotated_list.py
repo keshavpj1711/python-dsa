@@ -50,8 +50,28 @@ def get_rotations_linear(nums):
 
   return 0
 
-def get_rotations(nums):
-  pass
+def get_rotations_bs(nums):
+  # Logic
+  # If the middle element is smaller than the last element then the smallest element would be to the left
+  # If the middle element is larger than the last element then the smallest element would be to the right
+
+  # Pseudocode for this 
+  # get the middle element
+  # check that with last element
+    # if larger you have to go right
+    # if smaller then you have to go left
+
+  lo, hi = 0, len(nums)-1
+  
+  while lo <= hi:
+    mid = (lo+hi) // 2 
+    mid_number = nums[mid]
+    last_number = nums[hi]
+
+    if mid_number < last_number:
+      hi = mid-1
+    else:
+      lo = mid+1
 
 if __name__ == "__main__":
   for test in tests:
