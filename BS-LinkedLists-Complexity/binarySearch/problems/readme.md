@@ -1,3 +1,29 @@
+# Concepts to remember 
+
+We already know what binary search is, but a few things to remember for this is 
+
+## First or Last Occurence
+
+In order to find the first and last occurence of an element in a sorted array(in the example below ascending order), we apply the following conditions
+
+The below code is from the condition fn that was defined inside of the the get_start_position() and get_end_position()
+
+```python 
+# For first occurence
+if mid_number == target:
+    if mid-1 >= 0 and nums[mid-1] == target:
+        return 'left'
+    else: 
+        return 'found'
+
+# For last occurence 
+if mid_number == target:
+    if mid+1 <= len(nums) -1 and nums[mid+1] == target:
+        return 'right'
+    else: 
+        return 'found'
+```
+
 # Optional Question
 
 ## Handling repeating numbers
