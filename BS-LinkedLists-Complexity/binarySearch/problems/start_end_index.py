@@ -7,9 +7,11 @@
 
 
 def get_start_position(nums, target):
+    # this is the main logic which decides which part of the array is to be selected
     def condition(mid):
         mid_number = nums[mid]
         if mid_number == target:
+            # checking if there's a element before the found element
             if mid-1 >= 0 and nums[mid-1] == target:
                 return 'left'
             else: 
@@ -19,6 +21,7 @@ def get_start_position(nums, target):
         elif mid_number > target: 
             return 'left'
 
+    # below here we have the generic implementation of the binary search
     lo, hi = 0, len(nums)-1
     while lo <= hi:
         mid = (lo + hi)//2
@@ -35,6 +38,7 @@ def get_start_position(nums, target):
 def get_end_position(nums, target):
     def condition(mid):
         mid_number = nums[mid]
+        # checking if there's an element after the found element
         if mid_number == target:
             if mid+1 <= len(nums) -1 and nums[mid+1] == target:
                 return 'right'
