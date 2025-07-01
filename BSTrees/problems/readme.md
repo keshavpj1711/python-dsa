@@ -13,3 +13,13 @@ The problem at end:
 >
 > You can assume that usernames are unique. 
 
+### Solution 1
+
+Using the list sorted by username is the most basic approach we can have. In this case the Time Complexity Analysis would be: 
+- Insert: O(N)
+- Find: O(N)
+- Update: O(N)
+- List: O(1)
+
+
+
