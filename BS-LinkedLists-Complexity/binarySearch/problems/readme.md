@@ -1,3 +1,8 @@
+# Problems to Review
+
+- search rotated list - [Here](./search_rotated_list.py)
+- start end index - [Here](./start_end_index.py)
+
 # Concepts to remember 
 
 We already know what binary search is, but a few things to remember for this is 
@@ -23,6 +28,10 @@ if mid_number == target:
     else: 
         return 'found'
 ```
+
+## Searching in Rotated Sorted Array
+
+Since here we will have two sorted arrays what we can do is find the element in both of them seperately.
 
 # Optional Question
 
