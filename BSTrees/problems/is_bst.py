@@ -43,13 +43,13 @@ def is_valid_bst(node, max_value=None, min_value=None):
   
   if max_value is not None:
     print("Checking with max val")
-    if node.key > max_value:
+    if node.key >= max_value:
       print(f"False printed for {node.key}")
       return False
   
   if min_value is not None:
     print("Checking with min val")
-    if node.key < min_value:
+    if node.key <= min_value:
       print(f"False printed for {node.key}")
       return False
   
