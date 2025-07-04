@@ -7,6 +7,9 @@
 # We need to also keep in check with the ancestors of the node 
 # therefor the signature of the fn also includes the max/min(depending on left or right) value it can have 
 
+from warnings import resetwarnings
+
+
 class TreeNode:
   def __init__(self, key):
     self.key = key
@@ -57,7 +60,26 @@ def is_valid_bst(node, max_value=None, min_value=None):
   return result
 
 
+def get_max_min(node):
+  def in_order_traversal(node):
+    if node is None:
+      return []
+
+    return (in_order_traversal(node.left) + [node.key] + in_order_traversal(node.right))
+
+  result = in_order_traversal(node)
+  if result:
+    return (result[0], result[-1])
+  else:
+    return 
+  
+
+def get_min_max_opt(node):
+  pass
+
+
 print(is_valid_bst(tree))
+print("Max, min values: ", get_max_min(tree))
 print()
 print(is_valid_bst(tree1))
 print()
