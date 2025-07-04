@@ -74,12 +74,29 @@ def get_max_min(node):
     return 
   
 
-def get_min_max_opt(node):
-  pass
+def get_max_min_opt(node):
+  if node is None:
+    return None
+
+  def find_min(node):
+    if node.left == None:
+      return node.key
+
+    return find_min(node.left)
+
+  def find_max(node):
+    if node.right == None:
+      return node.key
+
+    return find_max(node.right)
+
+  return (find_min(node), find_max(node))
+      
 
 
 print(is_valid_bst(tree))
 print("Max, min values: ", get_max_min(tree))
+print("Max, min values: ", get_max_min_opt(tree))
 print()
 print(is_valid_bst(tree1))
 print()
