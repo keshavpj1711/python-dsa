@@ -44,6 +44,12 @@ class UserDatabase:
     return self.users
 
 
+class BSTNode:
+  pass
+
+
+
+
 user1 = User('user1', 'Kolo', 'userEmail1@mail.com')
 user2 = User('user2', 'Muani', 'userEmail2@mail.com')
 user3 = User('user3', 'Jinga', 'userEmail3@mail.com')
