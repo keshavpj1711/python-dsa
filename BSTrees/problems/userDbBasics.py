@@ -44,8 +44,13 @@ class UserDatabase:
     return self.users
 
 
-class BSTNode:
-  pass
+# class BSTNode:
+#   def __init__(self):
+#     self.key
+#     self.value
+#     self.parent 
+#     self.left
+#     self.right 
 
 
 
