@@ -2,7 +2,7 @@
 
 ## What constraints tells us about?
 
-![alt text](image.png)
+![alt text](/Notes/0TheStart/1Overview/time-complexity-images/image.png)
 
 When we are presented with contraints like these, we usually ignore them at first (when we are just starting out), BUT these constraints play a major role: 
 
@@ -17,13 +17,13 @@ When we are presented with contraints like these, we usually ignore them at firs
 
 Video Link: [Youtube Link](https://www.youtube.com/watch?v=eB7SMsE6qEc&t=289s)
 
-![alt text](image-1.png)
+![alt text](/Notes/0TheStart/1Overview/time-complexity-images/image-1.png)
 
 - These docker containers usually have a time limit to run, once the time limit is reached it gives us **TLE**
 
 > Now it's observed that max number of operations generally allowed before hitting a timeout is about 10 to 20 million
 
-![alt text](image-2.png)
+![alt text](/Notes/0TheStart/1Overview/time-complexity-images/image-2.png)
 
 > These are just workarounds and not strict guidelines
 
