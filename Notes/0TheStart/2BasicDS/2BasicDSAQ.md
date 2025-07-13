@@ -1,5 +1,7 @@
 # Questions 
 
+
+
 ## Two Sum 
 
 ### Intuition
@@ -8,6 +10,8 @@
 - Instead we use a dictionary (also hash map in other langs) which offers fast look up times (that avgs out to O(1)).
 
 **The basic idea** is to iterate through the list once, and for each number, we check if the number required to reach the target (target - current_number) has already been seen in the array.
+
+<details><summary>Solution</summary>
 
 
 ### Solution Approach
@@ -33,6 +37,8 @@ mydict = {}  # {key: index}
         
         mydict[nums[i]] = i
 ```
+</details>
+
 
 ## Reverse Linked List
 
