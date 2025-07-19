@@ -42,3 +42,23 @@ mydict = {}  # {key: index}
 
 ## Reverse Linked List
 
+The task is to reverse a singly linked list. A linked list is a data structure where each element (often called a 'node') contains a value and a pointer/reference to the next node in the sequence. A singly linked list means that each node points to the next node and there is no reference to previous nodes. \
+The problem provides a pointer to the head of the linked list, where the 'head' represents the first node in the list. Our goal is to take this linked list and return it in the reversed order. For instance, if the linked list is `1 -> 2 -> 3 -> null`, the reversed list should be `3 -> 2 -> 1 -> null`.
+
+### Intuition 
+
+- The intuition behind this solution is to take each node and move it to the beginning of the new reversed list as we traverse through the original list. 
+- We maintain a temporary node, often referred to as a 'dummy' node, which initially points to null, as it will eventually become the tail of the reversed list once all nodes are reversed.
+
+**STEPS:**\
+We iterate from the head towards the end of the list, and with each iteration, we do the following:
+
+- Temporarily store the next node (since we are going to disrupt the next reference of the current node).
+- Set the next reference of the current node to point to what is currently the first node of the reversed list (initially, this is null or dummy.next).
+- Move the dummy's next reference to the current node, effectively placing the current node at the beginning of the reversed list.
+- Move to the next node in the original list using the reference we stored earlier.
+
+
+### Solution Approach
+
+For Complete walthrough: [This Link](https://algo.monster/liteproblems/206)
