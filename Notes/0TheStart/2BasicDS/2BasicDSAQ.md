@@ -62,3 +62,47 @@ We iterate from the head towards the end of the list, and with each iteration, w
 ### Solution Approach
 
 For Complete walthrough: [This Link](https://algo.monster/liteproblems/206)
+
+## Number of Recent Calls
+
+In this problem, you are tasked with designing a RecentCounter class that tracks the number of requests received within a specific time frame. The time frame in question is the last 3000 milliseconds, which equates to the last 3 seconds. \
+This can be likened to monitoring network traffic, where you're interested in understanding the number of events or requests that have occurred in a sliding window of time for performance analysis or rate limiting.
+
+The class should support two operations:
+
+- `RecentCounter()` is the constructor that initializes the counter. When a RecentCounter object is created, it starts with zero recent requests.
+- `ping(int t)` is a method that is called each time a new request is received. 
+  - The request comes with a timestamp t (in milliseconds), which is strictly increasing with each call. 
+  - The purpose of ping is to add the new request and then return the count of all recent requests within the last 3000 milliseconds, which is the time range from t - 3000 to t, inclusive of both ends of the interval.
+
+
+### Intuition
+
+The key to solving this problem is to maintain a dynamic list of timestamped requests, ensuring that only those within the last 3000 milliseconds are counted. Because the input guarantees that each t in ping is increasing, we can use a queue to keep track of the timestamps of the recent requests.
+
+**The intuition for using a queue comes from its FIFO (First-In-First-Out) property**, which naturally aligns with the progression of time in our problem. When a new request arrives with timestamp t, we add it to the end of the queue. Then we need to remove all requests from the front of the queue that are outside the 3000 millisecond window (i.e., older than t - 3000).
+
+By doing so, our queue always contains only those requests that are within the 3000 millisecond window. The length of the queue after this cleaning process gives us the number of recent requests, which is what the ping method returns.
+
+To implement this idea in code, we utilize the deque data structure from Python's collections module because it allows for efficient addition and removal of elements from both ends.
+
+### Solution Approach
+
+To view the complete solution: [This Link](https://algo.monster/liteproblems/933)
+
+A simple walkthrough to get the solution is provided below and for this example, assume we receive a sequence of timestamped requests at the following times (in milliseconds): 1, 100, 3001, 3002
+
+- We create a **RecentCounter** object.
+- We call `ping(1)`. The deque now has one element: [1].
+  - Since there are no pings older than 3000 milliseconds, we return len(self.q) which is 1.
+- Next, we call `ping(100)`. The deque becomes: [1, 100].
+  - Both pings are within 3000 milliseconds from the current ping time, so the number of recent requests is 2.
+- Then we call `ping(3001)`. The deque is updated to: [1, 100, 3001].
+  - Now, we check for timestamps older than 3001 - 3000 which is 1. Since 1 is within the range, we do not remove it. The deque remains [1, 100, 3001].
+  - The len(self.q) now returns 3, as these are the recent pings within the last 3000 milliseconds.
+- Lastly, we call ping(3002). The deque first receives the timestamp 3002: [1, 100, 3001, 3002].
+  - We then remove any timestamps older than 3002 - 3000, which is 2. After removal, the deque is [100, 3001, 3002].
+  - We return len(self.q), which is 3, as the count of recent requests.
+
+
+When popping the unecessary elements using while loop, MAIN USE of deque comes that is to pop elements from start. 
