@@ -105,4 +105,22 @@ A simple walkthrough to get the solution is provided below and for this example,
   - We return len(self.q), which is 3, as the count of recent requests.
 
 
-When popping the unecessary elements using while loop, MAIN USE of deque comes that is to pop elements from start. 
+When popping the unecessary elements using while loop, MAIN USE of deque comes that is to pop elements from start.
+
+## Valid Parantheses
+
+The problem presents a scenario in which we are given a string s consisting of six possible characters: the opening and closing brackets of three types—parentheses (), square brackets [], and curly braces {}. The challenge is to determine whether this string represents a sequence of brackets that is considered valid based on certain rules. A string of brackets is deemed valid if it satisfies the following conditions:
+
+- Each opening bracket must be closed by a closing bracket of the same type.
+- Opening brackets must be closed in the correct order. That means no closing bracket should interrupt the corresponding pair of an opening bracket.
+- Each closing bracket must have an associated opening bracket of the same type before it.
+
+### Intuition
+
+We create a Stack, then we only put the brackets with the open end inside of it, and for it's closed counterpart we pop the bracket. By the end of traversal if the Stack remains empty the given input is a valid parantheses.
+
+### Time and Space Complexity
+
+- The time complexity of the given code is O(n), where n is the length of the input string. This is because the algorithm iterates over each character in the input string exactly once.
+
+- The space complexity of the code is also O(n), as in the worst case (when all characters in the input string are opening brackets), the stack stk will contain all characters in the input string.
