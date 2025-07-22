@@ -124,3 +124,15 @@ We create a Stack, then we only put the brackets with the open end inside of it,
 - The time complexity of the given code is O(n), where n is the length of the input string. This is because the algorithm iterates over each character in the input string exactly once.
 
 - The space complexity of the code is also O(n), as in the worst case (when all characters in the input string are opening brackets), the stack stk will contain all characters in the input string.
+
+
+## Array Partition
+
+Given an integer array `nums` of `2n` integers, group these integers into `n` pairs `(a1, b1), (a2, b2), ..., (an, bn)` such that the sum of `min(ai, bi)` for all `i` is maximized. Return the maximized sum.
+
+In Simple Words:
+- We need to create pairs from the elements in array
+- Calculate min of each pair
+- Finally, Calculate and return the sum of all these min vals 
+
+> The most important thing here is to construct these pairs wisely in order to get the maximum sum of the minimums from the pair.
