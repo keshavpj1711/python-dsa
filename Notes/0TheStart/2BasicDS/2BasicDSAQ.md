@@ -136,3 +136,18 @@ In Simple Words:
 - Finally, Calculate and return the sum of all these min vals 
 
 > The most important thing here is to construct these pairs wisely in order to get the maximum sum of the minimums from the pair.
+
+### Intuition 
+
+A crucial observation is that in each pair `(a, b)`, the minimum value is the one that will be included in our final sum, whereas the larger one is effectively 'wasted' in terms of contributing to the sum. Therefore, we should minimize the waste by making sure that the difference between the paired numbers is as small as possible.
+
+Following steps can be followed to reach the above mentioned idea:
+
+- sort the array in ascending order
+- now we can simply pair the element with it's adjacent element without worrying about the min difference criteria 
+
+> To find the sum of all minimum elements from each pair, we can add up every second element starting from the first element in the sorted array.
+
+### Solution 
+
+It's just this small piece of code that will solve this: `sum(sorted(nums)[::2])`
